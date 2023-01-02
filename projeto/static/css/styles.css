@@ -1,0 +1,87 @@
+.bgimage {
+    background-image: url('../images/livros_1.jpg');
+    background-size: cover;
+    background-position: center;
+    height:  400px; 
+}
+
+.btn{
+    font-size: 20px;
+}
+
+.toast-header{
+    background-color: rgb(213, 213, 247);
+}
+
+.titulo {
+    color: rgb(49, 37, 100);
+    text-align: center;
+    height:  400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+}
+/* 
+.imagem {
+    height:  500px; 
+    width: 300px;
+} */
+
+.navbar{
+    background-color: rgb(255, 255, 255);
+}
+
+.card{
+    background-color: rgb(218, 215, 248);
+    color:rgb(0, 37, 70);
+}
+.card-footer{
+    background-color: rgb(220, 226, 235);
+}
+
+.modal-dialog{
+    background-color: rgb(220, 226, 235);
+}
+
+
+.media img {
+    max-width: 180px;
+    margin-bottom: 16px;
+    margin-right: 16px;
+}
+
+
+@media (max-width: 480px){
+    .media img {
+        max-width: 90px;
+        margin-bottom: 6px;
+    }
+    .texto-media-body {
+        display: none;
+    }
+    .media body h5 {
+        font-size: 16px;
+        margin-top:40px;
+    }
+}
+
+.form {
+    padding: 30px 0;
+    margin-bottom: 1000px;
+    margin-top: 20px;
+}
+
+.footer{
+    background-color: rgb(104, 98, 167);
+    color: aliceblue;
+    padding: 30px 0px;
+}
+
+.footer a {
+    color:rgb(163, 200, 241)
+}
+
+.footer a:hover {
+    color:rgb(240, 240, 240)
+}

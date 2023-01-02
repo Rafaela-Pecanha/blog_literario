@@ -1,0 +1,241 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+        <title>{% block titulo %}Blog Lietrário{% endblock %}</title>
+    </head>
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        div#container {
+            flex: 1;
+        }
+        .barra {
+            overflow-y: scroll;
+        }
+             
+                
+        .bgimage {
+            background-image: url("static/images/livros_1.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+        }
+
+        .btn {
+            font-size: 20px;
+        }
+
+        .toast-header {
+            background-color: rgb(213, 213, 247);
+        }
+
+        .titulo {
+            color: rgb(49, 37, 100);
+            text-align: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 90px;
+        }
+
+        /* 
+        .imagem {
+        height:  500px; 
+        width: 300px;
+        } */
+
+        .navbar {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .card {
+            background-color: rgb(218, 215, 248);
+            color: rgb(0, 37, 70);
+        }
+
+        .card-footer {
+            background-color: rgb(220, 226, 235);
+        }
+
+        .modal-dialog {
+            background-color: rgb(220, 226, 235);
+        }
+
+
+        .media img {
+            max-width: 180px;
+            margin-bottom: 16px;
+            margin-right: 16px;
+        }
+
+
+        @media (max-width: 480px) {
+            .media img {
+                max-width: 90px;
+                margin-bottom: 6px;
+            }
+
+            .texto-media-body {
+                display: none;
+            }
+
+            .media body h5 {
+                font-size: 16px;
+                margin-top: 40px;
+            }
+        }
+
+        .form {
+            padding: 30px 0;
+            margin-bottom: 1000px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            background-color: rgb(104, 98, 167);
+            color: aliceblue;
+            padding: 30px 0px;
+        }
+
+        .footer a {
+            color: rgb(163, 200, 241)
+        }
+
+        .footer a:hover {
+            color: rgb(240, 240, 240)
+        }
+    </style>
+    <body class="barra">
+        <nav class="navbar navbar-light br-light navbar-expand-md fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'index' %}"> O Blog do Clube Literatura</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu"
+                    aria-expanded="false" aria-label="Botão de navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <!-- mr-auto serve para alinhar a esquerda -->
+                    <div class="navbar-nav mr-auto">
+                        <a class="nav-link nav-item" href="{% url 'index' %}">Início</a>
+                        <a class="nav-link nav-item" href="{% url 'livros:cadastra_livro' %}">Post</a>
+                        <a class="nav-link nav-item" href="{% url 'contato:index' %}">Contato</a>
+                        <a class="nav-link nav-item" href="{% url 'livros:index' %}">Llivros</a>
+                        <!-- <div class="dropdown">
+                            <a class="nav-link nav-item dropdown-toggle" data-toggle="dropdown"
+                                href="{% url 'livros:index' %}">Livros</a> -->
+                            <!-- <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{% url 'livros:index' %}">Romance</a>
+                                <a class="dropdown-item" href="{% url 'livros:index' %}">Fantasia</a>
+                                <a class="dropdown-item" href="{% url 'livros:index' %}">Terror</a>
+                            </div> -->
+                        <!-- </div> -->
+                    </div>
+                    <!-- nav serve para alinhar a direita -->
+
+                    <button class="btn btn-outline-primary btn-sucess" onclick="Toasty()">Bem-vindo</button>
+                    <div class="toast" id="EpicToast" role="alert" aria-live="assertive" aria-atomic="true"
+                        style="position: absolute; top:20px; right: 20px;">
+                        <div class="toast-header">
+                            <strong class="mr-auto">Blog Literário</strong>
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="toast-body">
+                            Seja bem-vindo e tenha uma boa leitura
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+       
+            {% block corpo %}
+
+            {% endblock %}
+        </div>
+
+
+        {% block rodapé %}
+            <div class="footer mt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-3 col-sm-7">
+                            <h5>Início</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="{% url 'index' %}">Mais lidos</a></li>
+                                <li><a href="{% url 'index' %}">Gêneros mais procurados</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-3 col-sm-5">
+                            <h5>Post</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="{% url 'post:index' %}">Formulário</a></li>
+                            </ul>
+                        </div>
+
+
+                        <div class="col-xl-3 col-lg-3 col-sm-7">
+                            <h5>Livros</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="{% url 'livros:index' %}">Cards</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xl-2 col-lg-3 col-sm-5">
+                            <h5>Contato</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="{% url 'contato:index' %}">Sobre</a></li>
+                                <li><a href="{% url 'contato:index' %}">Depoimentos</a></li>
+                                <li><i class="fas fa-envelope-square"></i><a
+                                        href="https://www.google.com/intl/pt-BR/gmail/about/"> blog@gmail.com</a></li>
+                                <li><i class="fas fa-user"></i> Maria</li>
+                                <li><i class="fas fa-phone"></i> (99)99999-3581</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endblock %}
+
+        <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
+        <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+        <script src="{% static 'js/jquery.mask.js' %}"></script>
+        <script src="{% static 'js/popper.js' %}"></script>
+        <script src="{% static 'js/bootstrap.js' %}"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+        <script>
+            var option=
+            {
+                animation: true,
+                delay : 2000
+            };
+
+            function Toasty( )
+            {
+                var toastHTMLElement = document.getElementById( "EpicToast" );
+
+                var toastElement = new bootstrap.Toast( toastHTMLElement, option );
+
+                toastElement.show();
+            }
+        </script>
+    </body>
+
+</html>

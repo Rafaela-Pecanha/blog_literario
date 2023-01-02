@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block corpo %}
+<div id="container" class="container">
+    <br>
+    <br>
+    <img src="{% static 'images/livros.jpg' %}" class="img-fluid mx-auto d-block rounded-circle mt-5">
+
+    <h1 id="contato" class="text-center mb-3 mt-3">Contatos</h1>
+
+    <p class="text-justify text-center">O Blog do Clube foi desenvolvido em 2021 por uma mulher de 22 anos apaixonada pela
+        literatura que em uma noite achou que seria uma ótima ideia compartilhar suas leituras, ressacas literárias,
+        devaneios e demais pensamentos com você, caro(a) leitor(a). Aqui estamos juntos para nos apaixonarmos, sofrermos por
+        aqueles personagens que só nos fazem passar vergonha, filosofar e tentar responder a dúvida que não quer calar:
+        Capitu traiu ou não traiu Bentinho?. Pega uma coberta, senta no sofá e vem comigo.</p>
+
+    <div class="jumbotron mb-4 mt-4">
+        <h4 class="mb-3">Depoimentos</h4>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <blockquote class="blockquote">
+                    <p class="text-justify mb-0">Li a bendita obra pela primeira vez num trem, indo pro aeroporto buscar um
+                        amigo e engoli o livro inteiro com a ânsia de um faminto, mas no final não havia sacado o clímax
+                        maior da história, que não está no fato de G. H. comer a pasta branca amarelecida da barata, mas em
+                        toda a sua metamorfose existencial no animal interior, portanto, em todo o labiríntico caminho
+                        repleto de loops do meio. É que para sacar Clarice é necessário um degustar tranquilo e
+                        despreocupado do instante. O momento da leitura é tal qual o instante-deus em que a obra foi parida.
+                        Havia “entendido” a obra na primeira lida, mas amar, amar como amo agora, só na segunda e Lispector
+                        sabia bem disso (não fui o único).</p>
+                    <footer class="blockquote-footer">
+                        Mario Filipe Cavalcanti
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="col-lg-6">
+                <blockquote class="blockquote">
+                    <p class="text-justify mb-0">Um dos mais importantes romances da literatura ocidental, quando em minha
+                        primeira leitura, não me impressionou muito. As descrições me pareceram demais, além do ritmo
+                        sonolento. Contudo, anos depois, li A Orgia Perpétua, um estudo sobre o livro de Flaubert escrito
+                        por Mario Vargas Llosa. Mais do que dissecar a obra-prima do escritor francês, Llosa demonstra a
+                        técnica literária de Flaubert em um tempo que muito pouco havia se pensado sobre o assunto. Na
+                        releitura que fiz, após este apoio literário, o livro me pareceu outro, muito melhor.</p>
+                    <footer class="blockquote-footer">
+                        Vilto Reis
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="col-lg-6">
+                <blockquote class="blockquote">
+                    <p class="text-justify mb-0">Na primeira vez que li O Pequeno Príncipe, fiz uma leitura desatenta,
+                        imatura. Li por ler, esperando não sei exatamente o que. Achei o Principezinho um chato, a história
+                        sem graça… Não cheguei a odiar, fiquei quase indiferente à obra. Anos depois, quando peguei para
+                        reler, já no original, tive uma percepção muito diferente. Me apaixonei pela sensibilidade do
+                        narrador, pela filosofia simples e profunda do Princepezinho. Afinal compreendi a poesia oculta
+                        naquele livro nem completamente infantil nem propriamente adulto, mas essencialmente humano; por
+                        isso se tornou um clássico. Se não tivesse dado essa segunda chance à obra, ela me teria passado
+                        batida e hoje faria falta na minha bagagem literária.</p>
+                    <footer class="blockquote-footer">
+                        Nicole Ayres
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

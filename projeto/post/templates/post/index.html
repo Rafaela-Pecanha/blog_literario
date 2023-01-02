@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% load static %}
+
+      
+{% block corpo %}
+
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <form action="">
+            <fieldset class="form-group">
+                <legend class="font-weight-bold">Informações dos Livros</legend>
+                <div class="form-group row">
+                    <label for="titulo" class="col-form-label col-lg-2">Título</label>
+                    <div class="col-lg-10">
+                        <input type="text" name="titulo" class="form-control is-valid" placeholder="Título" id="titulo">
+                    </div>
+                </div>
+                <div class="form-group row">
+                   <label for="autor" class="col-form-label col-lg-2">Autor</label>
+                   <div class="col-lg-10">
+                       <input type="text" name="autor" class="form-control is-valid" placeholder="Autor" id="autor">
+                   </div>
+               </div>
+               <div class="form-group row">
+                   <label class="col-form-label col-lg-2">Gênero</label>
+                   <div class="col-lg-10">
+                      <div class="form-check">
+                         <input type="radio" id="genero-fantasia" name="fantasia" value="Fantasia" class="form-check-input">
+                         <label for="genero-fantasia" class="form-check-label">Fantasia</label>
+                      </div>
+                      <div class="form-check">
+                         <input type="radio" id="genero-terror" name="terror" value="Terror" class="form-check-input">
+                         <label for="genero-terror" class="form-check-label">Terror</label>
+                      </div>
+                      <div class="form-check">
+                         <input type="radio" id="genero-romance" name="roamance" value="Romance" class="form-check-input">
+                         <label for="genero-romance" class="form-check-label">Romance</label>
+                      </div>
+                   </div>
+               </div>
+               <div class="form-group row">
+                   <label for="resumno" class="col-form-label col-lg-2">Resumo</label>
+                   <div class="col-lg-10">
+                      <input type="text" id="resumo" name="resumo" class="form-control is-invalid" placeholder="Resumo">
+                      <div class="invalid-feedback">Este campo deve ser preenchido</div>
+                   </div>
+                </div>
+             </fieldset>
+             <div class="form-group row">
+                <div class="col-lg-10 ofsset-lg-2">
+                   <button type="button" class="'btn btn-primary">Enviar</button>
+                </div>
+             </div>
+        </form>
+    </div>
+    <div class="container">
+       <h4 class="mb-4 mt-4" id="autores"> Autores</h4>
+       <div class="accordion" id="id-accordion">
+           <div class="card">
+               <div class="card-header" id="id-header-clarisse">
+                   <h5 class="mb-0">
+                       <a href="#id-clarisse" data-toggle="collapse" aria-expanded="true" aria-controls="id-clarisse">Clarice Lispector</a>
+                   </h5>
+               </div>
+               <div id="id-clarisse" class="collapse show" data-parent="#id-accordion" arial-labelledby="id-header-clarisse">
+                   <div class="card-body">
+                       <div class="row">
+                           <div class="col-lg-6">
+                               <div class="media">
+                                   <img src="{% static 'images/calsrisse_lispector.jpg' %}">
+                                   <div class="media-body">
+                                       <h5>A paixão segundo G. H.</h5>
+                                       <span class="texto-media-body">G. H., a protagonista e narradora do romance, despede sua empregada doméstica e decide fazer uma limpeza no quarto de serviço.</span>
+                                   </div>
+                               </div>
+                           </div>
+
+                           <div class="col-lg-6">
+                               <div class="media">
+                                   <img src="{% static 'images/perto_coracao.jpg' %}">
+                                   <div class="media-body">
+                                       <h5>Perto do coração selvagem</h5>
+                                       <span class="texto-media-body">O romance de estreia de Clarice Lispector já traz a marca do seu estilo introspectivo e foi premiado como melhor romance de estreia pela Fundação Graça Aranha, em 1944.</span>
+                                   </div>
+                               </div>
+                           </div>
+                           
+                           <div class="col-lg-6">
+                               <div class="media">
+                                   <img src="{% static 'images/lacos_familia.jpg' %}">
+                                   <div class="media-body">
+                                       <h5>Laços de família</h5>
+                                       <span class="texto-media-body">A primeira coletânea de contos lançada por Clarice contém, entre suas treze histórias, algumas das narrativas curtas mais célebres da escritora. </span>
+                                   </div>
+                               </div>
+                           </div>
+
+
+                           <div class="col-lg-6">
+                               <div class="media">
+                                   <img src="{% static 'images/hora_estrela.jpg' %} ">
+                                   <div class="media-body">
+                                       <h5>A hora da estrela</h5>
+                                       <span class="texto-media-body">Lançado pouco antes do falecimento da escritora, em 1977, A hora da estrela é protagonizado pela solitária Macabéa, alagoana que trabalha como datilógrafa no Rio de Janeiro.</span>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+           <div class="card">
+               <div class="card-header" id="id-header-madame">
+                   <h5 class="mb-0">
+                       <a href="#id-madame" data-toggle="collapse" aria-expanded="true" aria-controls="id-madame">Gustave Flaubert</a>
+                   </h5>
+               </div>
+               <div id="id-madame" class="collapse" data-parent="#id-accordion" arial-labelledby="id-header-madame">
+                   <div class="card-body">
+                       <div class="row">
+                           <div class="col-lg-6">
+                               <div class="media">
+                                   <img src=" {% static 'images/madame_bovary.jpg' %}">
+                                   <div class="media-body">
+                                       <h5>Madame Bovary</h5>
+                                       <span class="texto-media-body">Madame Bovary é um romance de Gustave Flaubert. Chamado de "romance dos romances", Madame Bovary é considerado pioneiro dentre os romances realistas, tornando-se famoso por sua originalidade.</span>
+                                   </div>
+                               </div>
+                           </div>
+
+                           <div class="col-lg-6">
+                               <div class="media">
+                                   <img src="{% static 'images/educacao_sentimental.jpg' %}">
+                                   <div class="media-body">
+                                       <h5>Educação Sentimental</h5>
+                                       <span class="texto-media-body">A Educação Sentimental é um romance de Gustave Flaubert publicado em 1869. É considerado um dos romances mais influentes do século XIX, elogiado por escritores contemporâneos como George Sand, Émile Zola e Henry James, e incluído na lista dos 100 melhores livros de todos os tempos de acordo com o The Guardian.</span>
+                                   </div>
+                               </div>
+                           </div>
+                           
+                           <div class="col-lg-6">
+                               <div class="media">
+                                   <img src=" {% static 'images/tres_contos.jpg' %}">
+                                   <div class="media-body">
+                                       <h5>Três Contos</h5>
+                                       <span class="texto-media-body">Publicado pela primeira vez em 1877, Três contos reúne alguns dos textos mais celebrados de Gustave Flaubert (1821- 1880). "Um coração simples" passa-se na Normandia, terra natal do escritor, e conta a comovente trajetória da solitária criada Félicité </span>
+                                   </div>
+                               </div>
+                           </div>
+
+
+                           <div class="col-lg-6">
+                               <div class="media">
+                                   <img src="{% static 'images/coracao_singelo.jpg' %}">
+                                   <div class="media-body">
+                                       <h5>Um coração singelo</h5>
+                                       <span class="texto-media-body">Idealizada por Fernando Sabino, a coleção Novelas Imortais reúne narrativas breves de autores de grandes clássicos universais, como Miguel de Cervantes, Herman Melville, R. L. Stevenson, Gustave Flaubert, Henry James, E. T. A. Hoffmann, entre outros.</span>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+
+
+{% endblock %}

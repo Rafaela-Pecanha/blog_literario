@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+   Cadastro de Livros
+{% endblock %}
+
+{% block corpo %}
+   <div class='mb-4'>
+      <h5>Cadastro de Livros</h5>
+      <hr class='mt-0'>
+   </div>
+
+   <div class="container">
+
+      <form action="{% url 'livros:cadastra_livro' %}" method="POST" class="pb-4"
+            enctype="multipart/form-data" novalidate>
+         <div class="row mb-xl-3">
+            <div class="col-xl-6">
+               <div class="row">
+                  <label for="id_nome" class="col-xl-2 font-weight-bold">Título</label>
+                  <div class="col-xl-10">
+                     {{ form.nome }}
+                     {# <input type="text" name="nome" maxlength="100" required="" id="id_nome"> #}
+                     {% if form.nome.errors %}
+                        <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                           {% for error in form.nome.errors %}
+                              <small>{{ error }}</small>
+                           {% endfor %}
+                        </div>
+                     {% endif %}
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-6">
+               <div class="row">
+                  <label for="id_descricao" class="col-xl-3 font-weight-bold">Sinopse</label>
+                  <div class="col-xl-9">
+                     {{ form.sinopse }}
+                     {# <input type="text" name="descricao" maxlength="100" required="" id="id_descricao"> #}
+                     {% if form.sinopse.errors %}
+                        <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                           {% for error in form.sinopse.errors %}
+                              <small>{{ error }}</small>
+                           {% endfor %}
+                        </div>
+                     {% endif %}
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="row mb-xl-3">
+            <div class="col-xl-6">
+               <div class="row">
+                  <label for="id_autor" class="col-xl-2 font-weight-bold">Autor</label>
+                  <div class="col-xl-10">
+                     {{ form.autor }}
+                     {# <input type="text" name="autor" maxlength="100" required="" id="id_autor"> #}
+                     {% if form.autor.errors %}
+                        <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                           {% for error in form.autor.errors %}
+                              <small>{{ error }}</small>
+                           {% endfor %}
+                        </div>
+                     {% endif %}
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-6">
+               <div class="row">
+                  <label for="id_isbn" class="col-xl-3 font-weight-bold">ISBN</label>
+                  <div class="col-xl-9">
+                     {{ form.isbn }}
+                     {# <input type="text" name="isbn" maxlength="100" required="" id="id_isbn"> #}
+                     {% if form.isbn.errors %}
+                        <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                           {% for error in form.isbn.errors %}
+                              <small>{{ error }}</small>
+                           {% endfor %}
+                        </div>
+                     {% endif %}
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="row mb-xl-3">
+            <div class="col-xl-6">
+               <div class="row">
+                  <label for="id_nome" class="col-xl-2 font-weight-bold">Genero</label>
+                  <div class="col-xl-10">
+                     {{ form.genero }}
+                     {# <input type="text" name="nome" maxlength="100" required="" id="id_nome"> #}
+                     {% if form.genero.errors %}
+                        <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                           {% for error in form.genero.errors %}
+                              <small>{{ error }}</small>
+                           {% endfor %}
+                        </div>
+                     {% endif %}
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-6">
+               <div class="row">
+                  <label for="id_descricao" class="col-xl-3 font-weight-bold">Quantidade</label>
+                  <div class="col-xl-9">
+                     {{ form.quantidade }}
+                     {% if form.quantidade.errors %}
+                        <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                           {% for error in form.quantidade.errors %}
+                              <small>{{ error }}</small>
+                           {% endfor %}
+                        </div>
+                     {% endif %}
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row mb-xl-3">
+            <div class="col-xl-6">
+               <div class="row">
+                  <label for="id_descricao" class="col-xl-2 font-weight-bold">Imagem</label>
+                  <div class="col-xl-10">
+                     {{ form.imagem }}
+                     {% if form.imagem.errors %}
+                        <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                           {% for error in form.imagem.errors %}
+                              <small>{{ error }}</small>
+                           {% endfor %}
+                        </div>
+                     {% endif %}
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-6">
+               <div class="row">
+                  <label for="id_descricao" class="col-xl-3 font-weight-bold">Cep</label>
+                  <div class="col-xl-9">
+                     {{ form.cep }}
+                     {% if form.cep.errors %}
+                        <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                           {% for error in form.cep.errors %}
+                              <small>{{ error }}</small>
+                           {% endfor %}
+                        </div>
+                     {% endif %}
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="row mb-xl-3">
+            <div class="col-xl-6">
+               <div class="row">
+                  <label for="id_descricao" class="col-xl-2 font-weight-bold">Rua</label>
+                  <div class="col-xl-10">
+                     {{ form.rua }}
+                     {% if form.rua.errors %}
+                        <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                           {% for error in form.rua.errors %}
+                              <small>{{ error }}</small>
+                           {% endfor %}
+                        </div>
+                     {% endif %}
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+         <div class="row mb-5">
+            <div class="col-xl-6">
+               <div class="row">
+                  
+                  <div class="col-xl-10 col-xl-2">
+                     {% csrf_token %}
+                     <button id="botao" type="submit" class="btn btn-primary">
+                        {% if 'livro_id' in request.session %}
+                           Alterar
+                        {% else %}
+                           Cadastrar
+                        {% endif %}
+                     </button>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-6">
+               <div class="row">
+                  <div class="col-lg-12" style="text-align: right;">
+                     <a href="{% url 'livros:index' %}"><button type="button" class="btn btn-success">Sair</button></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </form>
+   </div>
+
+{% endblock %}
